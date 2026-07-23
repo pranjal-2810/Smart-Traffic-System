@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Smart Traffic Control Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+<div class="dashboard">
+
+    <!-- HEADER -->
+    <div class="header">
+        <div class="title">🚦Smart Traffic Control System</div>
+
+        <div class="stats">
+            <div class="stat">
+                <span>Time</span>
+                <b id="time">0</b>
+            </div>
+
+            <div class="stat">
+                <span>Active Lane</span>
+                <b id="activeLane">-</b>
+            </div>
+        </div>
+    </div>
+
+    <!-- LEVEL 1 -->
+    <div class="grid-2">
+
+        <div class="card">
+            <h3>Lane Status</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Lane</th>
+                        <th>Queue</th>
+                        <th>Wait</th>
+                        <th>Emergency</th>
+                    </tr>
+                </thead>
+                <tbody id="tableBody"></tbody>
+            </table>
+        </div>
+
+        <div class="card">
+            <h3>Intersection Diagram</h3>
+            <div id="intersection">
+                <div class="lane top" id="lane-0"></div>
+                <div class="lane right" id="lane-1"></div>
+                <div class="lane bottom" id="lane-2"></div>
+                <div class="lane left" id="lane-3"></div>
+                <div id="center"></div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- LEVEL 2 -->
+    <div class="grid-2">
+
+        <div class="card">
+            <h3>Queue Trend</h3>
+            <canvas id="queueChart"></canvas>
+        </div>
+
+        <div class="card">
+            <h3>Average Wait Time</h3>
+            <canvas id="waitChart"></canvas>
+        </div>
+
+    </div>
+
+    <!-- LEVEL 3 -->
+    <div class="grid-2">
+
+        <div class="card">
+            <h3>Signal Distribution</h3>
+            <canvas id="pieChart"></canvas>
+        </div>
+
+        <div class="card">
+            <h3>Cumulative Throughput</h3>
+            <canvas id="throughputChart"></canvas>
+        </div>
+
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
